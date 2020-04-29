@@ -151,5 +151,29 @@ public class MyBinarySearchTreeUsingLinkedList {
             return 1 + Math.max(height(node.getLeft()), height(node.getRight()));
         }
     }
+    public int heightNonRecursive(TreeNode node){
+        if(node == null){
+            return -1;
+        }
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(node);
+        int height = -1;
 
+        while (!q.isEmpty()){
+            int size = q.size();
+            height++;
+            while(size > 0 ){
+                TreeNode curr = q.remove();
+                if(curr.getLeft() != null){
+                    q.add(curr.getLeft());
+                }
+                if(curr.getRight() != null){
+                    q.add(curr.getRight());
+                }
+                size--;
+            }
+
+        }
+        return height;
+    }
 }
