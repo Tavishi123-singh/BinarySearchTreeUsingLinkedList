@@ -22,14 +22,12 @@ public class Main {
         System.out.println("InOrder Traversal");
         bst.traverseInOrder(bst.getRoot());
         System.out.println();
-        System.out.println("InOrder Traversal");
-        bst.traverseInOrder(bst.getRoot());
-        System.out.println();
         System.out.println("PreOrder Traversal");
         bst.traversePreOrder(bst.getRoot());
         System.out.println();
         System.out.println("PostOrder Traversal");
         bst.traversePostOrder(bst.getRoot());
+        System.out.println();
         boolean result=bst.search(40);
         if(result==true) System.out.println("element found");
         else System.out.println("element not found");
