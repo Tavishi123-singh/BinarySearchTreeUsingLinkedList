@@ -68,6 +68,7 @@ public class MyBinarySearchTreeUsingLinkedList {
     }
     public void traverseInOrder(TreeNode node){
         if(node == null) {
+
         }
         else{
             traverseInOrder(node.getLeft());
@@ -76,5 +77,14 @@ public class MyBinarySearchTreeUsingLinkedList {
         }
 
     }
+    public void traversePostOrder(TreeNode node){
+        if(node == null){
 
+        }
+        else{
+            traversePostOrder(node.getLeft());
+            traversePostOrder(node.getRight());
+            System.out.print(node.getData() + ",");
+        }
+    }
 }
