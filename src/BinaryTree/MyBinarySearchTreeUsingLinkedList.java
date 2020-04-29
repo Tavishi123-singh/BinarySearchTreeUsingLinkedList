@@ -6,6 +6,9 @@ package BinaryTree;
 
 import node.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyBinarySearchTreeUsingLinkedList {
     private TreeNode root;
 
@@ -85,6 +88,25 @@ public class MyBinarySearchTreeUsingLinkedList {
             traversePostOrder(node.getLeft());
             traversePostOrder(node.getRight());
             System.out.print(node.getData() + ",");
+        }
+    }
+    public void traverseLevelOrder(TreeNode node){
+        if(node != null) {
+            Queue<TreeNode> q = new LinkedList<>();
+            q.add(node);
+            while (!q.isEmpty()) {
+                TreeNode current = q.remove();
+                System.out.print(current.getData() + ",");
+                if (current.getLeft() != null) {
+                    q.add(current.getLeft());
+                }
+                if (current.getRight() != null) {
+                    q.add(current.getRight());
+                }
+            }
+        }
+        else{
+            System.out.println("Tree is empty");
         }
     }
 }
