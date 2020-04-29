@@ -8,6 +8,7 @@ import node.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class MyBinarySearchTreeUsingLinkedList {
     private TreeNode root;
@@ -102,6 +103,25 @@ public class MyBinarySearchTreeUsingLinkedList {
                 }
                 if (current.getRight() != null) {
                     q.add(current.getRight());
+                }
+            }
+        }
+        else{
+            System.out.println("Tree is empty");
+        }
+    }
+    public void traversePreOrderWithoutRecursion(TreeNode node){
+        if(node != null){
+            Stack<TreeNode> s = new Stack<>();
+            s.push(node);
+            while(!s.empty()){
+                TreeNode current = s.pop();
+                System.out.print(current.getData() + ",");
+                if(current.getRight() != null){
+                    s.push(current.getRight());
+                }
+                if(current.getLeft() != null){
+                    s.push(current.getLeft());
                 }
             }
         }
