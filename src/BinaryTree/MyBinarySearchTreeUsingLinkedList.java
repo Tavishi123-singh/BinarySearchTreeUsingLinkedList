@@ -56,4 +56,14 @@ public class MyBinarySearchTreeUsingLinkedList {
         }
         return res;
     }
+    public void traversePreOrder(TreeNode node){
+        if(node == null) {
+
+        }
+        else{
+            System.out.print(node.getData() + ",");
+            traversePreOrder(node.getLeft());
+            traversePreOrder(node.getRight());
+        }
+    }
 }
