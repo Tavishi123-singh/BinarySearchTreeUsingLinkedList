@@ -143,4 +143,13 @@ public class MyBinarySearchTreeUsingLinkedList {
             System.out.println("Tree is empty");
         }
     }
+    public int height(TreeNode node){
+        if(node == null){
+            return -1;
+        }
+        else{
+            return 1 + Math.max(height(node.getLeft()), height(node.getRight()));
+        }
+    }
+
 }
