@@ -38,4 +38,22 @@ public class MyBinarySearchTreeUsingLinkedList {
             }
         }
     }
+    public boolean search(int data){
+        boolean res = false;
+        TreeNode temp = root;
+        while (temp !=null){
+            if(temp.getData() == data) {
+                res = true;
+                break;
+            }
+            if(data <= temp.getData()) {
+                temp = temp.getLeft();
+            }
+            else{
+                temp = temp.getRight();
+            }
+
+        }
+        return res;
+    }
 }
