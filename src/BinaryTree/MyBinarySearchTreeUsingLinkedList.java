@@ -129,4 +129,18 @@ public class MyBinarySearchTreeUsingLinkedList {
             System.out.println("Tree is empty");
         }
     }
+    public void traverseInOrderWithoutRecursion(TreeNode node){
+        if(node != null){
+            Stack<TreeNode> s = new Stack<>();
+            s.push(null);
+
+            while(s.peek() !=null){
+                s.push(node);
+
+            }
+        }
+        else{
+            System.out.println("Tree is empty");
+        }
+    }
 }
